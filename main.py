@@ -24,7 +24,7 @@ for i in range(x):
     p1='workspace_output/'
     p2=str(i)
     p3='output_'
-    p4=p1+p2+p3
+    p4=p1+p3+p2
     out = cv.VideoWriter(p4, fourcc, 20.0, (300,  180))
     while cap.isOpened():
         ret, frame = cap.read()
@@ -47,11 +47,11 @@ for i in range(x):
         out.write(frame)
         gray = cv.cvtColor(img2, cv.COLOR_BGR2GRAY)
         # cv.imshow('frame', frame)
-        cv.imshow('rotated video',img2)
+        # cv.imshow('rotated video',img2)
         cv.imshow("GrayColor", gray)
         if cv.waitKey(1) == ord('q'):
             break
-        k=cv.waitKey(30) & 0xff
+        k=cv.waitKey(1) & 0xff
         #once you inter Esc capturing will stop
         if k==27:
             break
