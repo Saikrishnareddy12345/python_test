@@ -7,11 +7,11 @@ import os
 path = "workspace"
 dir_list = os.listdir(path)
 x=len(dir_list)
-
+#finding the length of the input Directory
 x=len(dir_list)
 
  
-
+#Iterating the each and every file in the Directory
 for i in range(x):
     path1='workspace/'
     x1=str(dir_list[i])
@@ -25,6 +25,7 @@ for i in range(x):
     p2=str(i)
     p3='output_'
     p4=p1+p3+p2
+    ##Here Creating the VideoWriter
     out = cv.VideoWriter(p4, fourcc, 20.0, (300,  180))
     while cap.isOpened():
         ret, frame = cap.read()
@@ -51,7 +52,7 @@ for i in range(x):
         cv.imshow("GrayColor", gray)
         if cv.waitKey(1) == ord('q'):
             break
-        k=cv.waitKey(1) & 0xff
+        k=cv.waitKey(30) & 0xff
         #once you inter Esc capturing will stop
         if k==27:
             break
